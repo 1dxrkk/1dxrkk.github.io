@@ -6,6 +6,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "accent" | "icon" | "ghost";
   subtypes?: "gradient";
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
 }
 
@@ -14,6 +15,7 @@ export default function Button({
   variant = "primary",
   subtypes,
   disabled = false,
+  type = "button",
   onClick,
 }: ButtonProps) {
 
@@ -26,7 +28,7 @@ export default function Button({
     .join(" ");
 
   return (
-    <button className={className} onClick={onClick} disabled={disabled}>
+    <button className={className} type={type} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

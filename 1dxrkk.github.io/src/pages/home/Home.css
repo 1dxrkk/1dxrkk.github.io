@@ -1,0 +1,273 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  gap: 2rem;
+  padding: 10rem;
+  overflow-y: scroll;
+}
+
+.hero {
+  font-size: 10rem;
+}
+
+/* ────────────────────────────────────────────── */
+/* LIQUID GLASS LIST + ITEMS                      */
+/* ────────────────────────────────────────────── */
+
+.glass-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.75rem;
+  width: 1220px;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.glass-item {
+  width: 100%;
+  height: 180px;
+
+  position: relative;
+  padding: 1.6rem 1.8rem;
+
+  background: rgba(255, 255, 255, 0.006);
+  backdrop-filter: blur(18px) saturate(180%) brightness(0.8);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  overflow: hidden;
+  animation: fadeSlide 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* Inner liquid highlight */
+.glass-item::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  opacity: 0.12;
+  transform: rotate(25deg);
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Soft neon underglow */
+.glass-glow {
+  position: absolute;
+  inset: 0;
+  background: var(--primary-gradient);
+  opacity: 0.15;
+  filter: blur(35px);
+  z-index: -1;
+
+  transition: opacity 0.4s ease;
+}
+
+/* Hover liquid effect */
+.glass-item:hover {
+  transform: translateY(-8px) scale(1.015);
+
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.08),
+    0 0 90px rgba(var(--primary-600-rgb), 0.25);
+}
+
+.glass-item:hover::after {
+  opacity: 0.22;
+}
+
+.glass-item:hover .glass-glow {
+  opacity: 0.35;
+}
+
+/* Entry animation */
+@keyframes fadeSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.announcement-badge {
+  position: relative;
+  top: 1rem;
+
+  padding: 0.45rem 1.25rem;
+  border-radius: 32px;
+
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: -0.3px;
+
+  /* Liquid gradient */
+  background: linear-gradient(
+      135deg,
+      rgba(var(--primary-500-rgb), 0.25),
+      rgba(var(--primary-700-rgb), 0.35)
+    ),
+    rgba(255, 255, 255, 0.05);
+
+  /* Glass effect */
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  color: var(--text-950);
+
+  /* Soft glow */
+  box-shadow: 0 0 12px rgba(var(--primary-700-rgb), 0.35),
+    inset 0 0 8px rgba(255, 255, 255, 0.06);
+
+  /* Smooth hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.announcement-badge:hover {
+  cursor: default;
+  transform: translateY(-2px) scale(1.03);
+
+  box-shadow: 0 0 18px rgba(var(--primary-700-rgb), 0.45),
+    inset 0 0 10px rgba(255, 255, 255, 0.08);
+}
+
+/* subtle inner shine */
+.announcement-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    circle at top left,
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0) 70%
+  );
+
+  opacity: 0.22;
+  pointer-events: none;
+}
+/* PATCH NOTES CARD — FIXED */
+.patch-card {
+  width: 820px;
+  height: max-content;
+  padding: 2rem 2.25rem;
+  margin-top: 4rem;
+
+  position: relative;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Glow */
+  box-shadow: 0 0 22px rgba(var(--primary-700-rgb), 0.22),
+    inset 0 0 12px rgba(255, 255, 255, 0.05);
+
+  /* Fix collapsing issue */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header bar */
+.patch-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  /* prevents collapsing + ensures height */
+  min-height: 2.5rem;
+}
+
+.patch-header .actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.patch-header .info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Version badge */
+.patch-version {
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  padding: 0.3rem 0.75rem;
+  border-radius: 8px;
+
+  background: rgba(var(--primary-600-rgb), 0.35);
+  box-shadow: 0 0 8px rgba(var(--primary-700-rgb), 0.45),
+    inset 0 0 6px rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+}
+
+/* Title */
+.patch-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Patch list */
+.patch-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.patch-list li {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text-900);
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.patch-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.55rem;
+  left: 0;
+
+  width: 7px;
+  height: 7px;
+
+  background: rgba(var(--accent-500-rgb), 1);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(var(--accent-500-rgb), 0.7);
+}

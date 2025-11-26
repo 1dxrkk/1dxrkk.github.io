@@ -1,0 +1,184 @@
+/* Base Button Styles */
+.btn {
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+
+  padding: 0.5rem 0.9rem;
+  margin: 0;
+
+  background: var(--background-50);
+  color: var(--text-900);
+
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+
+  cursor: pointer;
+  transition: all 180ms ease-in-out;
+}
+
+.btn:hover {
+  background: var(--background-200);
+  border-color: var(--background-200);
+}
+
+.btn:active {
+  background: var(--background-300);
+}
+
+.btn:disabled {
+  background: var(--background-700);
+  border-color: var(--background-600);
+  cursor: not-allowed;
+  color: var(--text-300);
+}
+
+
+
+/* -----------------------------------------------
+   VARIANT: PRIMARY
+-------------------------------------------------- */
+.btn-primary {
+  background: var(--primary-500);
+  border-color: var(--primary-500);
+  color: var(--text-50);
+}
+
+.btn-primary:hover {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+}
+
+.btn-primary:active {
+  background: var(--primary-700);
+}
+
+
+
+/* -----------------------------------------------
+   VARIANT: SECONDARY
+-------------------------------------------------- */
+.btn-secondary {
+  background: var(--secondary-500);
+  border-color: var(--secondary-500);
+  color: var(--text-50);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-600);
+  border-color: var(--secondary-600);
+}
+
+.btn-secondary:active {
+  background: var(--secondary-700);
+}
+
+
+
+/* -----------------------------------------------
+   VARIANT: ACCENT
+-------------------------------------------------- */
+.btn-accent {
+  background: var(--accent-500);
+  border-color: var(--accent-500);
+  color: var(--text-50);
+}
+
+.btn-accent:hover {
+  background: var(--accent-600);
+  border-color: var(--accent-600);
+}
+
+.btn-accent:active {
+  background: var(--accent-700);
+}
+
+
+
+/* -----------------------------------------------
+   VARIANT: GHOST
+-------------------------------------------------- */
+.btn-ghost {
+  background: transparent;
+  border: .5px solid var(--text-400);
+  color: var(--text-400);
+}
+
+.btn-ghost:hover {
+  background: var(--text-300);
+  border-color: var(--text-300);
+  color: var(--background-950);
+}
+
+.btn-ghost:active {
+  background: var(--text-200);
+}
+
+
+
+/* -----------------------------------------------
+   SUBTYPE: GRADIENT (adds on top of variants)
+-------------------------------------------------- */
+.btn-gradient {
+  background: var(--gradient-primary);
+  border: none;
+  color: var(--text-50);
+}
+
+.btn-gradient:hover {
+  filter: brightness(1.25);
+}
+
+.btn-gradient:active {
+  filter: brightness(0.85);
+}
+
+.btn-primary.btn-gradient {
+  background: var(--gradient-primary);
+}
+
+.btn-secondary.btn-gradient {
+  background: var(--gradient-secondary);
+}
+
+.btn-accent.btn-gradient {
+  background: var(--gradient-accent);
+}
+
+
+
+/* -----------------------------------------------
+   ICON BUTTON
+-------------------------------------------------- */
+.btn-icon {
+  padding: 0;
+  width: 36px;
+  height: 36px;
+
+  background: transparent;
+  border-radius: 50%;
+  border: 1px solid transparent;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-icon:hover {
+  background: var(--background-200);
+}
+
+.btn-icon:active {
+  background: var(--background-300);
+}
+
+.btn-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--primary-500);
+  transition: 180ms ease;
+}
+
+.btn-icon:hover svg {
+  fill: var(--primary-600);
+}

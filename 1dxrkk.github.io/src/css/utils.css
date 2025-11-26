@@ -1,0 +1,61 @@
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.x-fill {
+  width: 100%;
+}
+
+.y-fill {
+  height: 100%;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.medium {
+  font-weight: 500;
+}
+
+.light {
+  font-weight: 400;
+}
+
+.italic {
+  font-style: italic;
+}
+
+hr {
+  border: 1px solid var(--background-500);
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 0.75rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}

@@ -33,8 +33,6 @@
   color: var(--text-300);
 }
 
-
-
 /* -----------------------------------------------
    VARIANT: PRIMARY
 -------------------------------------------------- */
@@ -52,8 +50,6 @@
 .btn-primary:active {
   background: var(--primary-700);
 }
-
-
 
 /* -----------------------------------------------
    VARIANT: SECONDARY
@@ -73,8 +69,6 @@
   background: var(--secondary-700);
 }
 
-
-
 /* -----------------------------------------------
    VARIANT: ACCENT
 -------------------------------------------------- */
@@ -93,14 +87,12 @@
   background: var(--accent-700);
 }
 
-
-
 /* -----------------------------------------------
    VARIANT: GHOST
 -------------------------------------------------- */
 .btn-ghost {
   background: transparent;
-  border: .5px solid var(--text-400);
+  border: 0.5px solid var(--text-400);
   color: var(--text-400);
 }
 
@@ -113,8 +105,6 @@
 .btn-ghost:active {
   background: var(--text-200);
 }
-
-
 
 /* -----------------------------------------------
    SUBTYPE: GRADIENT (adds on top of variants)
@@ -145,40 +135,44 @@
   background: var(--gradient-accent);
 }
 
-
-
-/* -----------------------------------------------
-   ICON BUTTON
--------------------------------------------------- */
+/* Base icon button */
 .btn-icon {
   padding: 0;
   width: 36px;
   height: 36px;
-
   background: transparent;
   border-radius: 50%;
   border: 1px solid transparent;
-
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.btn-icon:hover {
-  background: var(--background-200);
-}
-
-.btn-icon:active {
-  background: var(--background-300);
+  transition: background 180ms ease, border-color 180ms ease;
 }
 
 .btn-icon svg {
   width: 22px;
   height: 22px;
-  fill: var(--primary-500);
+  fill: var(--text-950);
   transition: 180ms ease;
 }
 
-.btn-icon:hover svg {
-  fill: var(--primary-600);
+/* Hover ONLY when not toggled */
+.btn-icon:not(.btn-toggled):hover {
+  background: var(--background-200);
+}
+
+/* -------------------------------------------------
+   TOGGLE SUBVARIANT (ONLY THESE CAN BE TOGGLED)
+-------------------------------------------------- */
+.btn-toggle.btn-icon.btn-toggled {
+  background: var(--accent-500);
+  border-color: var(--accent-500);
+}
+
+.btn-toggle.btn-icon.btn-toggled svg {
+  fill: var(--text-950); /* white */
+}
+
+.btn-toggle.btn-icon.btn-toggled:hover {
+  background: var(--accent-600);
 }

@@ -1,0 +1,215 @@
+/* --------------------------------------------
+   Page Layout
+-------------------------------------------- */
+.forum-page {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.forum-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-950);
+}
+
+.empty {
+  color: var(--text-700);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* --------------------------------------------
+   Create Thread (Discord-style input box)
+-------------------------------------------- */
+.forum-create {
+  padding: 1.25rem;
+  background: var(--bg-150);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.forum-create input,
+.forum-create textarea {
+  width: 100%;
+  border: 1px solid var(--glass-border);
+  background: var(--bg-100);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-900);
+}
+
+.forum-create textarea {
+  resize: none;
+  height: 140px;
+}
+
+.forum-create input:focus,
+.forum-create textarea:focus {
+  outline: none;
+  border-color: var(--accent-400);
+  background: var(--bg-50);
+}
+
+.divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 1rem 0;
+}
+
+/* --------------------------------------------
+   Thread List — Reddit style
+-------------------------------------------- */
+.forum-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* --------------------------------------------
+   Thread Block — Discord Forum Post Style
+-------------------------------------------- */
+.thread-card {
+  padding: 1.25rem;
+  background: var(--bg-150);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: background 120ms ease;
+}
+
+.thread-card:hover {
+  background: var(--bg-200);
+}
+
+.thread-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.thread-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-950);
+}
+
+/* Thread body */
+.thread-body {
+  color: var(--text-900);
+  line-height: 1.5rem;
+  font-size: 0.98rem;
+  white-space: pre-wrap;
+}
+
+/* --------------------------------------------
+   Actions (like/dislike/favorite)
+   Modern, simple buttons
+-------------------------------------------- */
+.thread-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  padding: 0.4rem 0.8rem;
+  background: var(--bg-200);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.4rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 120ms;
+  color: var(--text-900);
+}
+
+.action-btn:hover {
+  background: var(--bg-250);
+}
+
+.action-btn.active {
+  background: var(--accent-400);
+  color: var(--text-950);
+  border-color: var(--accent-500);
+}
+
+/* --------------------------------------------
+   Replies — Reddit-style nested comments
+-------------------------------------------- */
+.thread-replies {
+  margin-top: 0.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--accent-300);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Reply header */
+.reply-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-950);
+}
+
+/* Add reply */
+.reply-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reply-input textarea {
+  background: var(--bg-100);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.5rem;
+  padding: 0.6rem;
+  resize: none;
+  height: 90px;
+}
+
+.reply-input textarea:focus {
+  outline: none;
+  border-color: var(--accent-400);
+}
+
+.reply-input button {
+  width: fit-content;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-200);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.4rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.reply-input button:hover {
+  background: var(--bg-250);
+}
+
+/* --------------------------------------------
+   Reply List — Reddit Thread Comments
+-------------------------------------------- */
+.reply-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reply-card {
+  padding: 0.6rem 0.8rem;
+  background: var(--bg-200);
+  border: 1px solid var(--glass-border);
+  border-radius: 0.5rem;
+  color: var(--text-850);
+  line-height: 1.4rem;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+}

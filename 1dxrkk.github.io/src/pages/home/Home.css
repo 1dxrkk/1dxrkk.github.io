@@ -1,18 +1,4 @@
-.main {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: baseline;
-  gap: 2rem;
-  padding: 10rem;
-  overflow-y: scroll;
-}
 
-.hero {
-  font-size: 10rem;
-}
 
 /* ────────────────────────────────────────────── */
 /* LIQUID GLASS LIST + ITEMS                      */
@@ -270,4 +256,35 @@
   background: rgba(var(--accent-500-rgb), 1);
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(var(--accent-500-rgb), 0.7);
+}
+
+.random-post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rp-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-950);
+}
+
+.rp-body {
+  font-size: 1.25rem;
+  color: var(--text-800);
+  opacity: 0.9;
+}
+
+.rp-link {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent-500);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.rp-link:hover {
+  opacity: 0.75;
 }

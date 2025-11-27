@@ -8,6 +8,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  transition: all 300ms ease;
 }
 
 ::selection {
@@ -31,7 +33,6 @@ body {
   font-family: "Questrial";
   font-weight: 400;
 }
-/* Cursor tracking glow (converted from your button, now global) */
 
 .app {
   width: 100vw;
@@ -129,12 +130,17 @@ body {
   justify-content: baseline;
   gap: 2rem;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .hero {
   font-size: 10rem;
+  text-shadow: var(--text-950) 1px 0 18px;
 }
-
+.main .subtitle {
+  text-shadow: var(--text-950) 1px 0 10px;
+  font-size: 1.5rem;
+}
 a {
   color: inherit;
   text-decoration: none;
